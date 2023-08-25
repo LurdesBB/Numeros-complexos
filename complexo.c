@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-#include "complexo.h"
+/*#include "complexo.h"*/
+
+typedef struct{
+    float real;
+    float imaginario;
+}complexo;
 
 complexo complexo_novo(float real, float imaginario){
     complexo c;
@@ -20,22 +25,14 @@ complexo complexo_le(){
     return a;
 }
 
-complexo complexo_imprime(complexo a){
-    printf("%f + %fi\n",a.real,a.imaginario);
+void complexo_imprime(complexo a){
+    printf("%.2f + %.2fi\n",a.real,a.imaginario);
 }
 
-complexo complexo_verifica(complexo a, int *i){
+void complexo_verifica(complexo a){
     if(a.real!=0 && a.imaginario==0){
-        printf("\nO numero com parte real %f e imaginaria %f eh real!",a.real,a.imaginario);
+        printf("\nO numero com parte real %.2f e imaginaria %.2f eh real!",a.real,a.imaginario);
     }else{
-        printf("\nO numero com parte real %f e imaginaria %f nao eh real!",a.real,a.imaginario);
+        printf("\nO numero com parte real %.2f e imaginaria %.2f nao eh real!",a.real,a.imaginario);
     }
-    if(i==3){
-        if(a.real!=0 && a.imaginario==0){
-        printf("\nA soma dos dois numeros eh real!");
-        }else{
-        printf("\nA soma dos dois numeros nao eh real!");
-        }
-    }
-    i++;
 }
