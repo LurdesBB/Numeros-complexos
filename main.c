@@ -1,15 +1,16 @@
 #include <stdio.h>
-#include "complexo.h"
+#include "complexo.c"
 
 int main(){
-    int i=0;
     complexo a, b, c;
     a = complexo_le();
     b = complexo_le();
+    printf("\nO resultado da soma eh: ");
     c = complexo_soma(a,b);
     complexo_imprime(c);
-    complexo_verifica(a,&i);
-    complexo_verifica(b,&i);
-    complexo_verifica(c,&i);
+    complexo_verifica(a);
+    complexo_verifica(b);
+    printf("\nA soma:");
+    complexo_verifica(c);
     return 0;
 }
